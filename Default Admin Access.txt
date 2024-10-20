@@ -1,0 +1,13 @@
+Default Admin Access
+Username: admin
+Password: admin123
+
+Sample Driver Access
+Username: 202202-00001
+Password: gwilliams123
+
+Sample Client Access
+Username: cblake@sample.com
+Password: cblake123
+
+for over a day, i have been trying upload my website, it's a static web app . i did everything, setup the nodeapp but when i click on npm install, it shows me some errors, that some dependencies are outdated, i have updated over a 100 times and when i restart the proecess, it;s a the same thing, it's working perfectly on my localhost and on vercel, please can you remove mayne anytjing that's affecting, maybe a strict rule please. i have already passed my deadline
