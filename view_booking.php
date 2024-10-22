@@ -49,24 +49,31 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
             <dd class="pl-4"><?= isset($pickup_zone) ? $pickup_zone : "" ?></dd>
             <dt class="">Drop off Zone</dt>
             <dd class="pl-4"><?= isset($drop_zone) ? $drop_zone : "" ?></dd>
+
+                <dt class="">Date of Departure</dt>
+            <dd class="pl-4"><?= isset($date_of_departure) ? $date_of_departure : "" ?></dd>
+                <dt class="">Time of Departure</dt>
+            <dd class="pl-4"><?= isset($time_of_departure) ? $time_of_departure : "" ?></dd>
+
+
             <dt class="">Status</dt>
             <dd class="pl-4">
                 <?php 
                     switch($status){
                         case 0:
-                            echo "<span class='badge badge-secondary bg-gradient-secondary px-3 rounded-pill'>Pending</span>";
+                            echo "<span class='badge badge-secondary bg-gradient-secondary px-3 text-dark rounded-pill'>Pending</span>";
                             break;
                         case 1:
-                            echo "<span class='badge badge-primary bg-gradient-primary px-3 rounded-pill'>Driver Confirmed</span>";
+                            echo "<span class='badge badge-primary bg-gradient-primary px-3 rounded-pill text-warning'>Driver Confirmed</span>";
                             break;
                         case 2:
-                            echo "<span class='badge badge-warning bg-gradient-warning px-3 rounded-pill'>Picked-up</span>";
+                            echo "<span class='badge badge-warning bg-gradient-warning px-3 text-warning rounded-pill'>Picked-up</span>";
                             break;
                         case 3:
-                            echo "<span class='badge badge-success bg-gradient-success px-3 rounded-pill'>Dropped off</span>";
+                            echo "<span class='badge badge-success bg-gradient-success px-3 rounded-pill text-success'>Dropped off</span>";
                             break;
                         case 4:
-                            echo "<span class='badge badge-danger bg-gradient-danger px-3 rounded-pill'>Cancelled</span>";
+                            echo "<span class='badge badge-danger bg-gradient-danger px-3 text-danger rounded-pill'>Cancelled</span>";
                             break;
                     }
                 ?>

@@ -39,6 +39,30 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
                 required></textarea>
         </div>
 
+         <div class="form-group mb-3">
+            <label for="time_of_departure" class="form-label">Time of Departure</label>
+            <input 
+                name="time_of_departure" 
+                id="time_of_departure" 
+                type="time"
+                rows="3" 
+                class="form-control form-control-lg border-primary rounded-1 shadow-sm" 
+                placeholder="Enter your Time of Departure" 
+                required>
+        </div>
+        
+         <div class="form-group mb-3">
+            <label for="date_of_departure" class="form-label">Date of Departure</label>
+            <input 
+                name="date_of_departure" 
+                id="date_of_departure" 
+                rows="3" 
+                type="date"
+                class="form-control form-control-lg border-primary rounded-1 shadow-sm" 
+                placeholder="Enter your date of Departure" 
+                required>
+        </div>
+
         <div class="d-grid gap-2 mt-4">
             <button type="submit" class="btn  text-white btn-lg  shadow-sm" style="background:goldenrod;">Book Now</button>
         </div>

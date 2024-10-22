@@ -61,7 +61,7 @@
         </strong>
         All rights reserved.
         <div class="float-right d-none d-sm-inline-block">
-          <b><?php echo $_settings->info('short_name') ?> (by: <a href="" target="blank">Odafe Godfrey</a> )</b> 
+          <b><?php echo $_settings->info('short_name') ?> (by: <a href="" target="blank">Valentine Donatus</a> )</b> 
         </div>
       </footer>
     </div>

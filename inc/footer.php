@@ -84,7 +84,7 @@
         <!--/.footer-mid-wrap-->
         <div class="copyright-wrap">
             <div class="container">
-                <p>© <span id="currentYear"></span>Made By Odafe Godfrey All Rights Reserved.</p>
+                <p>© <span id="currentYear"></span>Made By Valentine Donatus All Rights Reserved.</p>
             </div>
         </div>
         <!--/.copyright-wrap-->

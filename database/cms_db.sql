@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 20, 2024 at 01:50 PM
+-- Generation Time: Oct 22, 2024 at 12:39 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -36,21 +36,24 @@ CREATE TABLE `booking_list` (
   `drop_zone` text NOT NULL,
   `status` tinyint(2) NOT NULL DEFAULT 0 COMMENT '0 = Pending,\r\n1 = Driver has Confirmed,\r\n2 = Pickup,\r\n3 = drop-off,\r\n4 = cancelled',
   `date_created` datetime NOT NULL DEFAULT current_timestamp(),
-  `date_updated` datetime DEFAULT NULL ON UPDATE current_timestamp()
+  `date_updated` datetime DEFAULT NULL ON UPDATE current_timestamp(),
+  `time_of_departure` time NOT NULL,
+  `date_of_departure` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `booking_list`
 --
 
-INSERT INTO `booking_list` (`id`, `ref_code`, `client_id`, `cab_id`, `pickup_zone`, `drop_zone`, `status`, `date_created`, `date_updated`) VALUES
-(2, '202202-00003', 1, 2, 'Sample Pickup Zone 1', 'Sample Drop-off Zone 1', 4, '2022-02-16 13:53:27', '2022-02-16 15:01:16'),
-(3, '202202-00003', 1, 2, 'Sample Pickup Zone 1', 'Sample Drop off Zone 1', 3, '2022-02-16 15:33:10', '2022-02-16 15:40:01'),
-(4, '202410-00001', 5, 2, 'keffi', 'abuja\r\n', 3, '2024-10-15 18:57:15', '2024-10-15 18:59:32'),
-(5, '202410-00001', 7, 2, 'keffi', 'keffi\r\n', 4, '2024-10-20 09:07:14', '2024-10-20 09:07:43'),
-(6, '202410-00001', 7, 2, '', '', 4, '2024-10-20 10:36:43', '2024-10-20 10:39:28'),
-(7, '202410-00002', 7, 2, 'keffi', 'keffi\r\n', 4, '2024-10-20 11:17:22', '2024-10-20 11:17:36'),
-(8, '202410-00002', 7, 1, 'keffi ', 'house', 4, '2024-10-20 12:46:14', '2024-10-20 12:46:29');
+INSERT INTO `booking_list` (`id`, `ref_code`, `client_id`, `cab_id`, `pickup_zone`, `drop_zone`, `status`, `date_created`, `date_updated`, `time_of_departure`, `date_of_departure`) VALUES
+(2, '202202-00003', 1, 2, 'Sample Pickup Zone 1', 'Sample Drop-off Zone 1', 4, '2022-02-16 13:53:27', '2022-02-16 15:01:16', '00:00:00', '0000-00-00'),
+(3, '202202-00003', 1, 2, 'Sample Pickup Zone 1', 'Sample Drop off Zone 1', 3, '2022-02-16 15:33:10', '2022-02-16 15:40:01', '00:00:00', '0000-00-00'),
+(4, '202410-00001', 5, 2, 'keffi', 'abuja\r\n', 3, '2024-10-15 18:57:15', '2024-10-15 18:59:32', '00:00:00', '0000-00-00'),
+(5, '202410-00001', 7, 2, 'keffi', 'keffi\r\n', 4, '2024-10-20 09:07:14', '2024-10-20 09:07:43', '00:00:00', '0000-00-00'),
+(6, '202410-00001', 7, 2, '', '', 4, '2024-10-20 10:36:43', '2024-10-20 10:39:28', '00:00:00', '0000-00-00'),
+(7, '202410-00002', 7, 2, 'keffi', 'keffi\r\n', 4, '2024-10-20 11:17:22', '2024-10-20 11:17:36', '00:00:00', '0000-00-00'),
+(8, '202410-00002', 7, 1, 'keffi ', 'house', 4, '2024-10-20 12:46:14', '2024-10-20 12:46:29', '00:00:00', '0000-00-00'),
+(9, '202410-00002', 7, 1, 'keffi', 'lamba', 0, '2024-10-22 11:09:04', NULL, '11:12:00', '2024-10-29');
 
 -- --------------------------------------------------------
 
@@ -82,7 +85,7 @@ CREATE TABLE `cab_list` (
 
 INSERT INTO `cab_list` (`id`, `reg_code`, `category_id`, `cab_reg_no`, `body_no`, `cab_model`, `cab_driver`, `driver_contact`, `driver_address`, `password`, `image_path`, `status`, `delete_flag`, `date_created`, `date_updated`) VALUES
 (1, '202202-00002', 1, 'GBN-2306', '1014', 'Sample', 'Mark Cooper', '09123456789', 'This is a sample address of the cab driver', 'c7162ff89c647f444fcaa5c635dac8c3', 'uploads/dirvers/1.png?v=1644981064', 1, 0, '2022-02-16 10:59:12', '2022-02-16 11:11:04'),
-(2, '202202-00001', 3, 'XYZ-1234', 'toyota', 'Model', 'George Williams', '09456987123', 'This is the address of the driver.', 'e10adc3949ba59abbe56e057f20f883e', 'uploads/dirvers/2.png?v=1644981833', 1, 0, '2022-02-16 11:13:30', '2024-10-16 21:11:28'),
+(2, '202202-00001', 3, 'XYZ-1234', 'toyota', 'Model', 'George Williams', '09456987123', 'This is the address of the driver.', '25d55ad283aa400af464c76d713c07ad', 'uploads/dirvers/2.png?v=1644981833', 1, 0, '2022-02-16 11:13:30', '2024-10-22 11:29:46'),
 (5, '202410-00001', 2, 'XYZ-123444', 'Green ', 'Toyota', 'Joseph Gad', '07019259834', 'Keffi, Nigeria', 'e10adc3949ba59abbe56e057f20f883e', NULL, 1, 0, '2024-10-20 11:08:36', NULL);
 
 -- --------------------------------------------------------
@@ -247,7 +250,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `booking_list`
 --
 ALTER TABLE `booking_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `cab_list`
